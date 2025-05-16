@@ -41,6 +41,15 @@ app.get('/', (req, res) => {
   });
 });
 
+// Health check route
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'UP',
+    timestamp: new Date(),
+    message: 'Service is running correctly'
+  });
+});
+
 // Error handling middleware
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error(err.stack);
