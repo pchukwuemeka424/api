@@ -26,12 +26,12 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/matches', matchRoutes);
-app.use('/api/chats', chatRoutes);
-app.use('/api/messages', messageRoutes);
-app.use('/api/realtime', websocketRoutes);
+app.use('/auth', authRoutes);
+app.use('/users', userRoutes);
+app.use('/matches', matchRoutes);
+app.use('/chats', chatRoutes);
+app.use('/messages', messageRoutes);
+app.use('/realtime', websocketRoutes);
 
 // Root route
 app.get('/', (req, res) => {
@@ -55,4 +55,4 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-export default app; 
+export default app;
